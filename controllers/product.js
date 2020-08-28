@@ -5,6 +5,7 @@ module.exports = {
     search: async (req, res) => {
       try {
           let query = req.query;
+          // handle product name
           if(query.name){
             query["name"] = { "$regex": query.name, "$options": "i" }
           }
@@ -14,7 +15,7 @@ module.exports = {
             delete query["upperPrice"];
             delete query["lowerPrice"];
           }
-          // handle category
+          // handle product category
           if(query.category){
             query["category.id"] = query.category
             delete query["category"]

@@ -4,8 +4,6 @@ const productRouter = require("../routers/product");
 var cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3000;
-//const User = require("./models/user");
-
 
 app.use(express.json());
 app.use(cors());
